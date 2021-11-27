@@ -1,0 +1,14 @@
+overwrite: true
+schema: "./src/schema.graphql"
+documents: null
+generates:
+  ./src/resolvers_types.ts:
+    contextType: ./src/entity/#MyContextType
+    mappers:
+      User: ./src/entity/User#User
+    plugins:
+      - "typescript"
+      - "typescript-resolvers"
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"
